@@ -1,0 +1,61 @@
+QC Buses Schedule
+
+1. Get raw inputs: bus route shp + bus schedules.
+2. Get coordinates from the bus route
+3. Create trip data per bus for the entire day.
+
+---------------------------------------------------------------------
+
+From routes get coordinates every n meters
+(Use shapely?)
+
+Set stations along the route -> with input point layer for stations
+
+---------------------------------------------------------------------
+
+Timestamping Bus LineString
+- speed                     20      kilometers per hour
+- distance b/w points       10      meters
+- loading/unloading time    5       minutes
+
+---------------------------------------------------------------------
+
+Repetitions
+for route in routes:
+    for interval in intervals:
+        create bus
+        put bus trip timestamp
+
+-----------------------------------------------------------
+
+Bus start trip
+Bus last trip
+
+How many buses should each route have to accommodate the set intervals?
+first
+
+[c1, c2, c3, c4, c5, ...]
+[t1, t2, t3, t4, t5, ...]
+
+Goal: Create geoJSON data like this 
+
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "vendor": "A",
+        "vol": 20
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-74.20986, 40.81773, 0, 1564184363],
+          [-74.20987, 40.81765, 0, 1564184396],
+          [-74.20998, 40.81746, 0, 1564184409]
+        ]
+      }
+    }
+  ]
+}
