@@ -1,4 +1,5 @@
 import geojson
+import random
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -11,8 +12,8 @@ from functions import WGS_to_UTM, route_to_points, get_station_index
 routes_path = "./routes/cleaned_routes.geojson"
 stations_path = "./stations/cleaned_stations.geojson"
 
-with open(routes_path, 'r') as route:
-   route_geojson = geojson.load(route)
+with open(routes_path, 'r') as route_gdf:
+   route_geojson = geojson.load(route_gdf)
 
 with open(stations_path, 'r') as stations_path:
    station_geojson = geojson.load(stations_path)
@@ -20,37 +21,38 @@ with open(stations_path, 'r') as stations_path:
 # ----------------------------- TRANSFORM ----------------------------- #
 
 # project from WGS84 to UTM 51N
-route_gdf = WGS_to_UTM(route_geojson)
+all_routes_gdf = WGS_to_UTM(route_geojson)
 station_gdf = WGS_to_UTM(station_geojson)
 
-routes = route_gdf["Name"].unique()
-"""
-'Route 1 - from QC Hall'   'Route 1 - to QC Hall' 
-'Route 5 - to QC Hall'  'Route 5 - from QC Hall' 'Route 2 - to QC Hall' 'Route 2 - from QC Hall'
- 'Route 7 - from QC Hall' 'Route 7 - to QC Hall' 'Route 8 - from QC Hall'
- 'Route 8 - to QC Hall' 'Route 3 - to LRT Katipunan'
- 'Route 3 - from LRT Katipunan' 'Route 4 - from QC Hall'
- 'Route 4 - to QC Hall' 'Route 6 - from QC Hall' 'Route 6 - to QC Hall']
- """
+all_routes_gdf["route_points"] = None
+all_routes_gdf["station_indices"] = None
 
-for route_name in routes:
-   print(route_name)
+for idx, row in all_routes_gdf.iterrows():
+   route_name = row["Name"]
+
    # iterate points every 10 meters
-   route = route_gdf[route_gdf["Name"] == route_name]
-   route_points_gdf = route_to_points(route, 10)
+   route_points = route_to_points(row, 10)
+   all_routes_gdf.at[idx, "route_points"] = route_to_points(row, 10).tolist()
    
-   # tag stations along interpolated points
+   # identify stations along interpolated points via their indices
    stations = station_gdf[station_gdf["route_name"]==route_name]
-   station_indices = list(map(int, get_station_index(route_points_gdf, stations=stations)))
-   print(station_indices)
+   station_indices = list(map(int, get_station_index(route_points, stations=stations)))
+   all_routes_gdf.at[idx, "station_indices"] = station_indices
 
-# ------------ TAG STATIONS ALONG THE INTERPOLATED POINTS -------------- #
+print(all_routes_gdf.head())
+
+# ---------------------- PLOT STATIONS + ROUTES ------------------------ #
+
+route_names = all_routes_gdf.Name.unique()
+colors = ['#%06X' % random.randint(0, 0xFFFFFF) for _ in range(8)]
+
+# there are two linestrings per route (back and forth) they must be the same colors
+color_list  = [x for x in colors for _ in range(2)]
+color_map = dict(zip(route_names, color_list))
+all_routes_gdf['color'] = all_routes_gdf['Name'].map(color_map)
+station_gdf['color'] = station_gdf['route_name'].map(color_map)
 
 fig, ax = plt.subplots()
-route_gdf.plot(ax=ax, color='blue', linewidth=2)
-# station_along_route_gdf.plot(ax=ax, color='red', markersize=40)
-
+all_routes_gdf.plot(ax=ax, color=all_routes_gdf['color'], linewidth=1, legend=True)
+station_gdf.plot(ax=ax, color=station_gdf['color'], markersize=20)
 plt.show()
-
-# -------------------- PUT STATION to the point ----------------------- #
-
