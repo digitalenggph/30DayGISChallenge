@@ -1,67 +1,54 @@
-import geojson, utm
+import geojson
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
-import shapely
-from shapely.geometry import shape, Point, LineString
-from shapely.ops import nearest_points
+from shapely.geometry import MultiPoint, Point
+from functions import WGS_to_UTM, route_to_points, get_station_index
 
-# in EPSG 4326 (Google's default) -> convert it to meters
-def WGS_to_UTM(raw_geojson):
-    geometry_coords_df = gpd.GeoDataFrame.from_features(raw_geojson)
-    geometry_coords_df = geometry_coords_df.set_crs("EPSG:4326")
-    geometry_coords_df = geometry_coords_df.to_crs("EPSG:32651")
-    return geometry_coords_df
 
 # ---------------------------- RAW INPUTS ---------------------------- #
 
-with open('./routes/route02_from_QCircle.geojson', 'r') as route:
+routes_path = "./routes/cleaned_routes.geojson"
+stations_path = "./stations/cleaned_stations.geojson"
+
+with open(routes_path, 'r') as route:
    route_geojson = geojson.load(route)
 
+with open(stations_path, 'r') as stations_path:
+   station_geojson = geojson.load(stations_path)
+
+# ----------------------------- TRANSFORM ----------------------------- #
+
+# project from WGS84 to UTM 51N
 route_gdf = WGS_to_UTM(route_geojson)
-
-print(route_gdf.head())
-print(route_gdf.crs)
-
-# Create linestring from point
-linestring = shape(route_gdf.loc[0, "geometry"])
-
-with open('./stations/route02_from_QCircle_station.geojson', 'r') as stations:
-   station_geojson = geojson.load(stations)
-
 station_gdf = WGS_to_UTM(station_geojson)
-print(station_gdf.head())
-print(station_gdf.crs)
 
-# ------------- CONVERT ROUTE TO POINTS EVERY n distance --------------- #
-distance = 0        ##  starting at length 0
-add_distance = 10   ## interpoalte every 10 meter
+routes = route_gdf["Name"].unique()
+"""
+'Route 1 - from QC Hall'   'Route 1 - to QC Hall' 
+'Route 5 - to QC Hall'  'Route 5 - from QC Hall' 'Route 2 - to QC Hall' 'Route 2 - from QC Hall'
+ 'Route 7 - from QC Hall' 'Route 7 - to QC Hall' 'Route 8 - from QC Hall'
+ 'Route 8 - to QC Hall' 'Route 3 - to LRT Katipunan'
+ 'Route 3 - from LRT Katipunan' 'Route 4 - from QC Hall'
+ 'Route 4 - to QC Hall' 'Route 6 - from QC Hall' 'Route 6 - to QC Hall']
+ """
 
-print(linestring.length)
-
-list_of_points = []
-while distance < linestring.length:
-   new_point = linestring.interpolate(distance)
-   list_of_points.append(new_point)
-   distance += add_distance ## add more
-
-gdf = gpd.GeoDataFrame({
-    'geometry': list_of_points
-})
+for route_name in routes:
+   print(route_name)
+   # iterate points every 10 meters
+   route = route_gdf[route_gdf["Name"] == route_name]
+   route_points_gdf = route_to_points(route, 10)
+   
+   # tag stations along interpolated points
+   stations = station_gdf[station_gdf["route_name"]==route_name]
+   station_indices = list(map(int, get_station_index(route_points_gdf, stations=stations)))
+   print(station_indices)
 
 # ------------ TAG STATIONS ALONG THE INTERPOLATED POINTS -------------- #
-multipoint = gdf.union_all()
-print(station_gdf.columns)
-
-station_along_route = [nearest_points(row["geometry"], multipoint)[1] for _, row in station_gdf.iterrows()]
-station_along_route_gdf = gpd.GeoDataFrame({
-   'geometry': station_along_route
-})
-print(station_along_route_gdf)
 
 fig, ax = plt.subplots()
-route_gdf.plot(ax=ax, color='blue')
-station_along_route_gdf.plot(ax=ax, color='red', markersize=40)
+route_gdf.plot(ax=ax, color='blue', linewidth=2)
+# station_along_route_gdf.plot(ax=ax, color='red', markersize=40)
 
 plt.show()
 

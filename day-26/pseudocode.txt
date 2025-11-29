@@ -6,14 +6,14 @@ QC Buses Schedule
 
 ---------------------------------------------------------------------
 
-From routes get coordinates every n meters
+DONE From routes get coordinates every n meters
 (Use shapely?)
 
-Set stations along the route -> with input point layer for stations
+Set stations along the coordinates -> with input point layer for stations
 
 ---------------------------------------------------------------------
 
-Timestamping Bus LineString
+Timestamping coordinates
 - speed                     20      kilometers per hour
 - distance b/w points       10      meters
 - loading/unloading time    5       minutes
@@ -27,6 +27,8 @@ for route in routes:
         put bus trip timestamp
 
 -----------------------------------------------------------
+
+Convert to linestring
 
 Bus start trip
 Bus last trip
