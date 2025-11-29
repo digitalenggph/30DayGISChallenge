@@ -15,19 +15,19 @@ def WGS_to_UTM(raw_geojson):
     return geometry_coords_df
 
 
-def route_to_points(gdf, n_meters):
+def route_to_points(gdf_row, n_meters):
    """
    converts route (line) to series of points
-   :param gdf: geodataframe of routes to be converted
+   :param gdf_row: geodataframe row of route to be converted
    :param n_meters: distance between the points in meters
-   :return: geodataframe of the points every n_meters
+   :return: geoseries of the points every n_meters
    """
 
    distance = 0        #  starting at length 0
    n_meters = 10   # interpoalte every 10 meter
 
    # Create linestring from point
-   linestring = shape(gdf.geometry.iloc[0])
+   linestring = shape(gdf_row.geometry)
 
    route_points = []
    while distance < linestring.length:
@@ -35,15 +35,17 @@ def route_to_points(gdf, n_meters):
       route_points.append(new_point)
       distance += n_meters
 
-   return gpd.GeoDataFrame({
-            'geometry': route_points
-         })
+   return gpd.GeoSeries(route_points)
+
+#    return gpd.GeoDataFrame({
+#             'geometry': route_points
+#          })
 
 
-def get_station_index(route_points: gpd.GeoDataFrame, stations: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+def get_station_index(route_points: gpd.GeoSeries, stations: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
    """
-   using the stations geodataframe, detect which point along the route will be treated as the "station"
-   :param route_points: geodataframe containing the route represented by series of points
+   using the stations geoseries, detect which point along the route will be treated as the "station"
+   :param route_points: geoseries containing the route represented by points
    :param stations: geodataframe of stations represented by a point per station
    :return: list of indices of the points to be labelled as "stations"
 
