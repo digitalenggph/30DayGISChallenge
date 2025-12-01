@@ -1,12 +1,22 @@
-# from flask import Flask, render_template
+import pandas as pd
+from jinja2 import Environment, FileSystemLoader
 
-# app = Flask(__name__)
+# Load Excel
+df = pd.read_excel("30DayGISChallenge.xlsx")  # replace with your file path
 
+# Prepare data
+columns = df.columns.tolist()
+rows = df.values.tolist()
 
-# @app.route('/')
-# def home():
-#     return render_template('index.html')
+# Setup Jinja environment
+env = Environment(loader=FileSystemLoader('.'))  # look in current folder
+template = env.get_template('template.html')
 
+# Render the template with data
+output = template.render(columns=columns, rows=rows)
 
-# if __name__ == '__main__':
-#     app.run(debug=True, port=7777)
+# Save to HTML
+with open("output.html", "w", encoding="utf-8") as f:
+    f.write(output)
+
+print("HTML file created successfully!")
