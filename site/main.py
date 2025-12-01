@@ -9,8 +9,8 @@ columns = df.columns.tolist()
 rows = df.values.tolist()
 
 # Setup Jinja environment
-env = Environment(loader=FileSystemLoader('.'))  # look in current folder
-template = env.get_template('template.html')
+env = Environment(loader=FileSystemLoader('templates'))
+template = env.get_template('body.html')
 
 # Render the template with data
 output = template.render(columns=columns, rows=rows)
