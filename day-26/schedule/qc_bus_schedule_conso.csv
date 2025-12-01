@@ -1,0 +1,90 @@
+﻿route_num,pointA,pointB,route_name,route_name_py,day,schedule_start,schedule_end,interval_mins,num_trips
+route_01,Quezon City Hall,Cubao,Quezon City Hall to Cubao,Route 1 - from QC Hall,weekday,6:00,11:30,10,33.00
+route_01,Quezon City Hall,Cubao,Quezon City Hall to Cubao,Route 1 - from QC Hall,weekday,11:30,16:00,30,9.00
+route_01,Quezon City Hall,Cubao,Quezon City Hall to Cubao,Route 1 - from QC Hall,weekday,16:00,20:00,10,24.00
+route_01,Quezon City Hall,Cubao,Quezon City Hall to Cubao,Route 1 - from QC Hall,weekday,20:00,20:30,30,1.00
+route_01,Quezon City Hall,Cubao,Quezon City Hall to Cubao,Route 1 - from QC Hall,saturday,6:30,20:30,30,28.00
+route_01,Quezon City Hall,Cubao,Quezon City Hall to Cubao,Route 1 - from QC Hall,sunday,8:00,20:00,60,12.00
+route_01,Cubao,Quezon City Hall,Cubao to Quezon City Hall,Route 1 - to QC Hall,weekday,6:00,11:30,10,33.00
+route_01,Cubao,Quezon City Hall,Cubao to Quezon City Hall,Route 1 - to QC Hall,weekday,11:30,16:00,30,9.00
+route_01,Cubao,Quezon City Hall,Cubao to Quezon City Hall,Route 1 - to QC Hall,weekday,16:00,20:00,10,24.00
+route_01,Cubao,Quezon City Hall,Cubao to Quezon City Hall,Route 1 - to QC Hall,weekday,20:00,20:30,30,1.00
+route_01,Cubao,Quezon City Hall,Cubao to Quezon City Hall,Route 1 - to QC Hall,saturday,6:30,20:30,30,28.00
+route_01,Cubao,Quezon City Hall,Cubao to Quezon City Hall,Route 1 - to QC Hall,sunday,8:00,20:00,60,12.00
+route_02,Quezon City Hall,Litex-IBP Road,Quezon City Hall to Litex-IBP Road,Route 2 - from QC Hall,weekday,6:00,9:00,6,30.00
+route_02,Quezon City Hall,Litex-IBP Road,Quezon City Hall to Litex-IBP Road,Route 2 - from QC Hall,weekday,9:00,16:00,30,14.00
+route_02,Quezon City Hall,Litex-IBP Road,Quezon City Hall to Litex-IBP Road,Route 2 - from QC Hall,weekday,16:00,20:00,6,40.00
+route_02,Quezon City Hall,Litex-IBP Road,Quezon City Hall to Litex-IBP Road,Route 2 - from QC Hall,weekday,20:00,21:00,30,2.00
+route_02,Quezon City Hall,Litex-IBP Road,Quezon City Hall to Litex-IBP Road,Route 2 - from QC Hall,saturday,6:30,20:30,30,28.00
+route_02,Quezon City Hall,Litex-IBP Road,Quezon City Hall to Litex-IBP Road,Route 2 - from QC Hall,sunday,8:00,20:00,60,12.00
+route_02,Litex-IBP Road,Quezon City Hall,Litex-IBP Road to Quezon City Hall,Route 2 - to QC Hall,weekday,5:30,9:00,6,35.00
+route_02,Litex-IBP Road,Quezon City Hall,Litex-IBP Road to Quezon City Hall,Route 2 - to QC Hall,weekday,9:00,16:00,30,14.00
+route_02,Litex-IBP Road,Quezon City Hall,Litex-IBP Road to Quezon City Hall,Route 2 - to QC Hall,weekday,16:00,20:00,6,40.00
+route_02,Litex-IBP Road,Quezon City Hall,Litex-IBP Road to Quezon City Hall,Route 2 - to QC Hall,saturday,6:30,20:30,30,28.00
+route_02,Litex-IBP Road,Quezon City Hall,Litex-IBP Road to Quezon City Hall,Route 2 - to QC Hall,sunday,8:00,20:00,60,12.00
+route_03,Welcome Rotonda,Aurora-Katipunan,Welcome Rotonda to Aurora-Katipunan,Route 3 - to LRT Katipunan,weekday,6:40,9:00,20,7.00
+route_03,Welcome Rotonda,Aurora-Katipunan,Welcome Rotonda to Aurora-Katipunan,Route 3 - to LRT Katipunan,weekday,9:00,17:00,30,16.00
+route_03,Welcome Rotonda,Aurora-Katipunan,Welcome Rotonda to Aurora-Katipunan,Route 3 - to LRT Katipunan,weekday,17:00,19:00,20,6.00
+route_03,Welcome Rotonda,Aurora-Katipunan,Welcome Rotonda to Aurora-Katipunan,Route 3 - to LRT Katipunan,saturday,7:00,19:00,60,12.00
+route_03,Welcome Rotonda,Aurora-Katipunan,Welcome Rotonda to Aurora-Katipunan,Route 3 - to LRT Katipunan,sunday,8:00,20:00,60,12.00
+route_03,Aurora-Katipunan,Welcome Rotonda,Aurora-Katipunan to Welcome Rotonda,Route 3 - from LRT Katipunan,weekday,6:40,9:00,20,7.00
+route_03,Aurora-Katipunan,Welcome Rotonda,Aurora-Katipunan to Welcome Rotonda,Route 3 - from LRT Katipunan,weekday,9:00,17:00,30,16.00
+route_03,Aurora-Katipunan,Welcome Rotonda,Aurora-Katipunan to Welcome Rotonda,Route 3 - from LRT Katipunan,weekday,17:00,19:00,20,6.00
+route_03,Aurora-Katipunan,Welcome Rotonda,Aurora-Katipunan to Welcome Rotonda,Route 3 - from LRT Katipunan,saturday,7:00,19:00,60,12.00
+route_03,Aurora-Katipunan,Welcome Rotonda,Aurora-Katipunan to Welcome Rotonda,Route 3 - from LRT Katipunan,sunday,8:00,20:00,60,12.00
+route_04,Quezon City Hall,General Luis,Quezon City Hall to General Luis,Route 4 - from QC Hall,weekday,5:40,9:00,10,20.00
+route_04,Quezon City Hall,General Luis,Quezon City Hall to General Luis,Route 4 - from QC Hall,weekday,9:00,14:30,30,11.00
+route_04,Quezon City Hall,General Luis,Quezon City Hall to General Luis,Route 4 - from QC Hall,weekday,14:30,20:00,10,33.00
+route_04,Quezon City Hall,General Luis,Quezon City Hall to General Luis,Route 4 - from QC Hall,weekday,20:00,21:00,30,2.00
+route_04,Quezon City Hall,General Luis,Quezon City Hall to General Luis,Route 4 - from QC Hall,saturday,6:30,20:30,30,28.00
+route_04,Quezon City Hall,General Luis,Quezon City Hall to General Luis,Route 4 - from QC Hall,sunday,8:00,20:00,60,12.00
+route_04,General Luis,Quezon City Hall,General Luis to Quezon City Hall,Route 4 - to QC Hall,weekday,5:10,9:00,10,23.00
+route_04,General Luis,Quezon City Hall,General Luis to Quezon City Hall,Route 4 - to QC Hall,weekday,9:00,14:30,30,11.00
+route_04,General Luis,Quezon City Hall,General Luis to Quezon City Hall,Route 4 - to QC Hall,weekday,14:30,20:00,10,33.00
+route_04,General Luis,Quezon City Hall,General Luis to Quezon City Hall,Route 4 - to QC Hall,saturday,6:30,20:30,30,28.00
+route_04,General Luis,Quezon City Hall,General Luis to Quezon City Hall,Route 4 - to QC Hall,sunday,8:00,20:00,60,12.00
+route_05,Quezon City Hall,Mindanao Avenue (via Visayas Ave.),Quezon City Hall to Mindanao Avenue (via Visayas Ave.),Route 5 - from QC Hall,weekday,6:00,9:00,10,18.00
+route_05,Quezon City Hall,Mindanao Avenue (via Visayas Ave.),Quezon City Hall to Mindanao Avenue (via Visayas Ave.),Route 5 - from QC Hall,weekday,9:00,16:30,30,15.00
+route_05,Quezon City Hall,Mindanao Avenue (via Visayas Ave.),Quezon City Hall to Mindanao Avenue (via Visayas Ave.),Route 5 - from QC Hall,weekday,16:30,20:00,10,21.00
+route_05,Quezon City Hall,Mindanao Avenue (via Visayas Ave.),Quezon City Hall to Mindanao Avenue (via Visayas Ave.),Route 5 - from QC Hall,weekday,20:00,21:00,30,2.00
+route_05,Quezon City Hall,Mindanao Avenue (via Visayas Ave.),Quezon City Hall to Mindanao Avenue (via Visayas Ave.),Route 5 - from QC Hall,saturday,6:30,20:30,30,28.00
+route_05,Quezon City Hall,Mindanao Avenue (via Visayas Ave.),Quezon City Hall to Mindanao Avenue (via Visayas Ave.),Route 5 - from QC Hall,sunday,8:00,20:00,60,12.00
+route_05,Mindanao Avenue (via Visayas Ave.),Quezon City Hall,Mindanao Avenue (via Visayas Ave.) to Quezon City Hall,Route 5 - to QC Hall,weekday,6:00,9:00,10,18.00
+route_05,Mindanao Avenue (via Visayas Ave.),Quezon City Hall,Mindanao Avenue (via Visayas Ave.) to Quezon City Hall,Route 5 - to QC Hall,weekday,9:00,16:30,30,15.00
+route_05,Mindanao Avenue (via Visayas Ave.),Quezon City Hall,Mindanao Avenue (via Visayas Ave.) to Quezon City Hall,Route 5 - to QC Hall,weekday,16:30,20:00,10,21.00
+route_05,Mindanao Avenue (via Visayas Ave.),Quezon City Hall,Mindanao Avenue (via Visayas Ave.) to Quezon City Hall,Route 5 - to QC Hall,saturday,6:30,20:30,30,28.00
+route_05,Mindanao Avenue (via Visayas Ave.),Quezon City Hall,Mindanao Avenue (via Visayas Ave.) to Quezon City Hall,Route 5 - to QC Hall,sunday,8:00,20:00,60,12.00
+route_06,Quezon City Hall,Gilmore,Quezon City Hall to Gilmore,Route 6 - from QC Hall,weekday,6:30,9:00,15,10.00
+route_06,Quezon City Hall,Gilmore,Quezon City Hall to Gilmore,Route 6 - from QC Hall,weekday,9:00,16:00,30,14.00
+route_06,Quezon City Hall,Gilmore,Quezon City Hall to Gilmore,Route 6 - from QC Hall,weekday,16:00,20:00,15,16.00
+route_06,Quezon City Hall,Gilmore,Quezon City Hall to Gilmore,Route 6 - from QC Hall,saturday,7:00,19:00,60,12.00
+route_06,Quezon City Hall,Gilmore,Quezon City Hall to Gilmore,Route 6 - from QC Hall,sunday,8:00,20:00,60,12.00
+route_06,Gilmore,Quezon City Hall,Gilmore to Quezon City Hall,Route 6 - to QC Hall,weekday,6:30,9:00,15,10.00
+route_06,Gilmore,Quezon City Hall,Gilmore to Quezon City Hall,Route 6 - to QC Hall,weekday,9:00,16:00,30,14.00
+route_06,Gilmore,Quezon City Hall,Gilmore to Quezon City Hall,Route 6 - to QC Hall,weekday,16:00,20:00,15,16.00
+route_06,Gilmore,Quezon City Hall,Gilmore to Quezon City Hall,Route 6 - to QC Hall,weekday,20:00,21:00,30,2.00
+route_06,Gilmore,Quezon City Hall,Gilmore to Quezon City Hall,Route 6 - to QC Hall,saturday,7:00,19:00,60,12.00
+route_06,Gilmore,Quezon City Hall,Gilmore to Quezon City Hall,Route 6 - to QC Hall,sunday,8:00,20:00,60,12.00
+route_07,Quezon City Hall,C5-Ortigas Ave. Ext,Quezon City Hall to C5-Ortigas Ave. Ext,Route 7 - from QC Hall,weekday,6:30,9:00,15,10.00
+route_07,Quezon City Hall,C5-Ortigas Ave. Ext,Quezon City Hall to C5-Ortigas Ave. Ext,Route 7 - from QC Hall,weekday,9:00,17:00,30,16.00
+route_07,Quezon City Hall,C5-Ortigas Ave. Ext,Quezon City Hall to C5-Ortigas Ave. Ext,Route 7 - from QC Hall,weekday,17:00,20:00,15,12.00
+route_07,Quezon City Hall,C5-Ortigas Ave. Ext,Quezon City Hall to C5-Ortigas Ave. Ext,Route 7 - from QC Hall,saturday,7:00,19:00,60,12.00
+route_07,Quezon City Hall,C5-Ortigas Ave. Ext,Quezon City Hall to C5-Ortigas Ave. Ext,Route 7 - from QC Hall,sunday,8:00,20:00,60,12.00
+route_07,C5-Ortigas Ave. Ext,Quezon City Hall,C5-Ortigas Ave. Ext to Quezon City Hall,Route 7 - to QC Hall,weekday,6:30,9:00,15,10.00
+route_07,C5-Ortigas Ave. Ext,Quezon City Hall,C5-Ortigas Ave. Ext to Quezon City Hall,Route 7 - to QC Hall,weekday,9:00,17:00,30,16.00
+route_07,C5-Ortigas Ave. Ext,Quezon City Hall,C5-Ortigas Ave. Ext to Quezon City Hall,Route 7 - to QC Hall,weekday,17:00,20:00,15,12.00
+route_07,C5-Ortigas Ave. Ext,Quezon City Hall,C5-Ortigas Ave. Ext to Quezon City Hall,Route 7 - to QC Hall,weekday,20:00,21:00,30,2.00
+route_07,C5-Ortigas Ave. Ext,Quezon City Hall,C5-Ortigas Ave. Ext to Quezon City Hall,Route 7 - to QC Hall,saturday,7:00,19:00,60,12.00
+route_07,C5-Ortigas Ave. Ext,Quezon City Hall,C5-Ortigas Ave. Ext to Quezon City Hall,Route 7 - to QC Hall,sunday,8:00,20:00,60,12.00
+route_08,Quezon City Hall,Muñoz,Quezon City Hall to Muñoz,Route 8 - from QC Hall,weekday,6:00,10:00,10,24.00
+route_08,Quezon City Hall,Muñoz,Quezon City Hall to Muñoz,Route 8 - from QC Hall,weekday,10:00,13:00,30,6.00
+route_08,Quezon City Hall,Muñoz,Quezon City Hall to Muñoz,Route 8 - from QC Hall,weekday,13:00,19:30,10,39.00
+route_08,Quezon City Hall,Muñoz,Quezon City Hall to Muñoz,Route 8 - from QC Hall,weekday,19:30,21:00,30,3.00
+route_08,Quezon City Hall,Muñoz,Quezon City Hall to Muñoz,Route 8 - from QC Hall,saturday,7:00,20:00,30,26.00
+route_08,Quezon City Hall,Muñoz,Quezon City Hall to Muñoz,Route 8 - from QC Hall,sunday,7:00,20:00,60,13.00
+route_08,Muñoz,Quezon City Hall,Muñoz to Quezon City Hall,Route 8 - to QC Hall,weekday,6:00,10:00,10,24.00
+route_08,Muñoz,Quezon City Hall,Muñoz to Quezon City Hall,Route 8 - to QC Hall,weekday,10:00,13:00,30,6.00
+route_08,Muñoz,Quezon City Hall,Muñoz to Quezon City Hall,Route 8 - to QC Hall,weekday,13:00,19:30,10,39.00
+route_08,Muñoz,Quezon City Hall,Muñoz to Quezon City Hall,Route 8 - to QC Hall,weekday,19:30,21:00,30,3.00
+route_08,Muñoz,Quezon City Hall,Muñoz to Quezon City Hall,Route 8 - to QC Hall,saturday,7:00,20:00,30,26.00
+route_08,Muñoz,Quezon City Hall,Muñoz to Quezon City Hall,Route 8 - to QC Hall,sunday,7:00,20:00,60,13.00
