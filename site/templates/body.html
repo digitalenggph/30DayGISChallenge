@@ -7,14 +7,14 @@
 
 					<section class="banner onload-image-fade-in onload-content-fade-right style3 fullscreen orient-right content-align-left image-position-center">
 						<div class="content">
-							<h1>Story</h1>
-							<p class="major">A (modular, highly tweakable) responsive one-page template designed by <a href="https://html5up.net">HTML5 UP</a> and released for free under the <a href="https://html5up.net/license">Creative Commons</a>.</p>
+							<h1>#30DayMapChallenge</h1>
+							<p class="major">Last November 2025, I took part in the annual mapping challenge which features unique <a href="https://30daymapchallenge.com/" target="_blank">themes</a> for the the entire day of the month.</p>
 							<ul class="actions stacked">
-								<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+								<li><a href="#first" class="button primary big wide smooth-scroll-middle">Take a look!</a></li>
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/banner.jpg" alt="" />
+							<img src="images/banner.png" alt="" />
 						</div>
 					</section>
 
@@ -25,14 +25,14 @@
 				    <!-- Two -->
 					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 						<div class="content">
-							<h2>Day  {{ entry.day }}</h2>
-							<p>{{ entry.theme }}</p>
+							<h2>Day  {{ entry.day }} — {{ entry.theme }}</h2>
+							<p>{{ entry.description }}</p>
 							<ul class="actions stacked">
-								<li><a href="{{ entry.demo_link }}" class="button">Demo</a></li>
+								<li><a href="{{ entry.demo_link }}" class="button" target="_blank">Demo</a></li>
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/spotlight01.jpg" alt="" />
+							<img src="images/gallery/thumbs/{{ entry.media_link }}" alt="" />
 						</div>
 					</section>
 
@@ -41,14 +41,14 @@
 				    <!-- Three -->
 					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
-							<h2>Day  {{ entry.day }}</h2>
-							<p>{{ entry.theme }}</p>
+							<h2>Day  {{ entry.day }} — {{ entry.theme }}</h2>
+							<p>{{ entry.description }}</p>
 							<ul class="actions stacked">
-								<li><a href="{{ entry.demo_link }}" class="button">Demo</a></li>
+								<li><a href="{{ entry.demo_link }}" class="button" target="_blank">Demo</a></li>
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/spotlight02.jpg" alt="" />
+							<img src="images/gallery/thumbs/{{ entry.media_link }}" alt="" />
 						</div>
 					</section>
                     {% endif %}
@@ -62,25 +62,25 @@
 						</div>
 
 						<!-- Gallery -->
-							<div class="gallery style1 medium lightbox onscroll-fade-in">
-                            {% for entry in data %}
-                                {% if entry.section != "special" %}
-								<article>
-									<a href="images/gallery/thumbs/{{ entry.media_link }}" class="image">
-										<img src="images/gallery/thumbs/{{ entry.media_link }}" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Day  {{ entry.day }}</h3>
-										<p>{{ entry.title }}</p>
-										<ul class="actions fixed">
-											<li><span class="button small">{{ entry.theme }}</span></li>
-										</ul>
-									</div>
-								</article>
-                                {% endif %}
-                            {% endfor %}
-							</div>
-
+                        <div class="gallery style1 medium lightbox onscroll-fade-in">
+                        {% for entry in data %}
+                            {% if entry.section != "special" %}
+                            <article>
+                                <a href="images/gallery/thumbs/{{ entry.media_link }}" class="image custom">
+                                    <img src="images/gallery/thumbs/{{ entry.media_link }}" alt=""/>
+                                </a>
+                                <div class="caption">
+                                    <h3>Day  {{ entry.day }} — {{ entry.theme }}</h3>
+                                    <h6>{{ entry.title }}</h6>
+                                    <p>{{ entry.description }}</p>
+                                    <ul class="actions fixed">
+                                        <li><span class="button small">View</span></li>
+                                    </ul>
+                                </div>
+                            </article>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
 					</section>
 
 
