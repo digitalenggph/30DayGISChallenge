@@ -9,7 +9,7 @@ data = data_df.to_dict('records')
 # print(data[0].keys())
 # exit()
 
-context = {
+content = {
     'title': "#30DayMapChallenge2025",
     'data': data
     }
@@ -18,7 +18,7 @@ context = {
 env = Environment(loader=FileSystemLoader('templates'))
 template = env.get_template('body.html')
 
-rendered_html = template.render(context)
+rendered_html = template.render(content)
 
 # Save to HTML
 with open("output.html", "w", encoding="utf-8") as f:
