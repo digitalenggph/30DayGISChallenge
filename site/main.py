@@ -6,9 +6,6 @@ from jinja2 import Environment, FileSystemLoader
 data_df = pd.read_excel("30DayGISChallenge.xlsx")
 data = data_df.to_dict('records')
 
-# print(data[0].keys())
-# exit()
-
 content = {
     'title': "#30DayMapChallenge2025",
     'data': data
