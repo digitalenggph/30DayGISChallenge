@@ -8,9 +8,9 @@
 					<section class="banner onload-image-fade-in onload-content-fade-right style3 fullscreen orient-right content-align-left image-position-center">
 						<div class="content">
 							<h1>#30DayMapChallenge</h1>
-							<p class="major">Last November 2025, I took part in the annual mapping challenge which features unique <a href="https://30daymapchallenge.com/" target="_blank">themes</a> for the the entire day of the month.</p>
+							<p class="major">Last November 2025, I took part in the annual mapping challenge which features unique <a href="https://30daymapchallenge.com/" target="_blank">themes</a> for each day of the month.</p>
 							<ul class="actions stacked">
-								<li><a href="#first" class="button primary big wide smooth-scroll-middle">Take a look!</a></li>
+								<li><a href="#2" class="button primary big wide smooth-scroll-middle">Take a look!</a></li>
 							</ul>
 						</div>
 						<div class="image">
@@ -23,7 +23,7 @@
                     {% if entry.section == "special" and ns.counter % 2 == 0 %}
                     {% set ns.counter = ns.counter + 1 %}
 				    <!-- Two -->
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="{{ ns.counter }}">
 						<div class="content">
 							<h2>Day  {{ entry.day }} — {{ entry.theme }}</h2>
 							<p>{{ entry.description }}</p>
@@ -39,7 +39,7 @@
                     {% elif entry.section == "special" and ns.counter % 2 != 0 %}
                     {% set ns.counter = ns.counter + 1 %}
 				    <!-- Three -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="{{ ns.counter }}">
 						<div class="content">
 							<h2>Day  {{ entry.day }} — {{ entry.theme }}</h2>
 							<p>{{ entry.description }}</p>
@@ -58,7 +58,7 @@
 					<section class="wrapper style1 align-center">
 						<div class="inner">
 							<h2>The rest of my entries</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+							<p>Here's the gallery of my other entries for the event. Enjoy! :) </p>
 						</div>
 
 						<!-- Gallery -->
