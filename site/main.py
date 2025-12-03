@@ -18,7 +18,7 @@ template = env.get_template('body.html')
 rendered_html = template.render(content)
 
 # Save to HTML
-with open("output.html", "w", encoding="utf-8") as f:
+with open("index.html", "w", encoding="utf-8") as f:
     f.write(rendered_html)
 
 print("HTML file created successfully!")
